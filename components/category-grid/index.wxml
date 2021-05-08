@@ -1,0 +1,11 @@
+<view class="container" style="background-image:url({{bgImg}})">
+    <l-grid l-class="inner-container" row-num="4">
+        <block wx:for="{{grid}}" wx:key="index">
+            <l-grid-item l-grid-item-class="grid-item" key="{{index}}" slot="{{index}}">
+                <view>
+                    <image data-id="{{item.id}}" data-name="{{item.name}}" bind:tap="gotoCategoryList" src="{{item.icon}}" class="img" />
+                </view>
+            </l-grid-item>
+        </block>
+    </l-grid>
+</view>

@@ -1,0 +1,39 @@
+.container{
+    width: 100%;
+    box-sizing: border-box;
+    padding: 42rpx 28rpx 34rpx 28rpx;
+    background-color: #fff;
+}
+
+.title{
+    width: 694rpx;
+    height: 90rpx;
+}
+
+.scroll-view{
+    display: flex;
+    flex-wrap: nowrap;
+    margin-top: 28rpx;
+}
+
+.inner{
+    display: flex;
+}
+
+.newest-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 30rpx;
+}
+
+.newest-img{
+    width: 160rpx;
+    height: 160rpx;
+}
+
+.newest-text{
+    font-size: 20rpx;
+    color: #666;
+    margin-top: 20rpx;
+}

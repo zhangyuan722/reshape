@@ -1,0 +1,64 @@
+.slogan {
+    color: #666 !important;
+}
+
+.theme {
+    width: 100%;
+    display: flex;
+}
+
+.b-1 {
+    height: 160rpx;
+}
+
+.swiper {
+    width: 100%;
+    height: 360rpx;
+}
+
+.swiper-img {
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.i-1 {
+    height: 360rpx;
+}
+
+.i-2 {
+    height: 568rpx;
+    margin-top: 10rpx;
+}
+
+.i-3 {
+    height: 720rpx;
+    margin-top: 10rpx;
+}
+
+.prod-bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10rpx;
+    background-color: #f0f0f0;
+}
+
+.img-container {
+    width: 100%;
+    height: 100rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 8rpx;
+    background-color: #fff;
+}
+
+.img-container>image {
+    width: 690rpx;
+    height: 70rpx;
+}
+
+.loadmore-text{
+    margin: 0 20rpx !important;
+}

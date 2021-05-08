@@ -1,0 +1,19 @@
+<wxs module="f" src="../../wxs/format.wxs" />
+<view data-pid="{{data.id}}" bind:tap="onGotoDetail" class="container">
+    <image bindload="onImgLoad" style="width:{{w}}rpx;height:{{h}}rpx;" src="{{data.small_img}}" />
+    <view class="content-container">
+        <text class="title">{{data.title}}</text>
+        <view hidden="{{flag}}" class="tags">
+            <block wx:for="{{tags}}" wx:key="id">
+                <l-tag size="super-mini" type="reading" l-class="l-tag">
+                    <text class="tag">{{item}}</text>
+                </l-tag>
+            </block>
+        </view>
+        <text class="subtitle">{{data.subtitle}}</text>
+        <view class="like-container">
+            <image src="/images/likes/unlike.png" class="like-icon" />
+            <text class="like-num">{{f.numFormat(data.praise)}}</text>
+        </view>
+    </view>
+</view>

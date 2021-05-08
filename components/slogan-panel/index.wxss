@@ -1,0 +1,36 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    border-radius: 30rpx;
+    background: linear-gradient(to left, #1BA3D1,#3a62bb);
+    --theme-color-blue: #3a62bb;
+    --theme-color-green: #2e8b57;
+}
+
+.card {
+    height: 150rpx !important;
+    margin-top: 30rpx !important;
+    margin-bottom: 10rpx !important;
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+.slogan {
+    font-size: 34rpx !important;
+    color: #fff !important;
+}
+
+.btn {
+    border-radius: 40rpx !important;
+    background-color: rgba(0, 0, 0, .5) !important;
+    color: rgba(255, 255, 255, .8) !important;
+    margin-right: 30rpx !important;
+    margin-bottom: 30rpx !important;
+}
+
+/* .reshape {
+    font-family: reshape !important;
+    color: #3a62bb !important;
+} */

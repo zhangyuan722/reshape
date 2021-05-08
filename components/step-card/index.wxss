@@ -1,0 +1,110 @@
+.container {
+    position: relative;
+}
+
+.card {
+    width: 96% !important;
+    height: 200rpx !important;
+    display: flex !important;
+    align-items: center !important;
+    box-sizing: border-box !important;
+    border-radius: 20rpx !important;
+}
+
+.card-img {
+    width: 160rpx !important;
+    height: 160rpx !important;
+    border-radius: 20rpx !important;
+}
+
+.skeleton {
+    width: 96% !important;
+    height: 200rpx !important;
+    display: flex !important;
+    align-items: center !important;
+    box-sizing: border-box !important;
+    margin-left: 2% !important;
+    border-radius: 20rpx !important;
+    background-color: #fff !important;
+}
+
+.skeleton-avatar {
+    position: absolute !important;
+    margin-left: 2%;
+    border-radius: 20rpx !important;
+}
+
+.skeleton-para {
+    width: 500rpx !important;
+}
+
+.para-right {
+    margin-left: 194rpx !important;
+}
+
+.para-left {
+    margin-left: 30rpx !important;
+}
+
+.loc-left {
+    left: 16rpx;
+}
+
+.loc-right {
+    right: 16rpx;
+}
+
+/* .left {
+    width: 78rpx;
+    height: 120rpx;
+    display: flex;
+    justify-content: flex-end;
+    margin-left: 20rpx;
+    border-left: 2px dashed #F5F5F5;
+}
+
+.right {
+    
+
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+} */
+
+.step-desc {
+    font-size: 28rpx;
+    text-indent: 2em;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    word-break: break-all;
+}
+
+.desc-right {
+    padding-right: 14rpx;
+}
+
+.step-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+}
+
+.step-index {
+    position: absolute;
+    top: 8rpx;
+    margin-left: 2rpx;
+    color: #fff;
+}
+
+.reshape {
+    font-family: reshape !important;
+}
+
+.badge {
+    font-size: 60rpx !important;
+}

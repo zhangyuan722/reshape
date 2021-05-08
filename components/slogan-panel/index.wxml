@@ -1,0 +1,4 @@
+<view class="container" style="width:{{windowWidth * 0.8}}rpx;max-height:{{windowHeight * 0.5}}rpx">
+    <l-card style="width:{{windowWidth * 0.8}}rpx" type="primary" plaintext l-class="card" l-title-class="slogan" title="{{title}}" />
+    <l-button bind:tap="onNext" l-class="btn" size="medium">换一条</l-button>
+</view>

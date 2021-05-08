@@ -1,0 +1,6 @@
+@font-face {
+  font-family: 'reshape';  /* Project id 2480087 */
+  src: url('//at.alicdn.com/t/font_2480087_hqnnaup9hxm.woff2?t=1619854752710') format('woff2'),
+       url('//at.alicdn.com/t/font_2480087_hqnnaup9hxm.woff?t=1619854752710') format('woff'),
+       url('//at.alicdn.com/t/font_2480087_hqnnaup9hxm.ttf?t=1619854752710') format('truetype');
+}

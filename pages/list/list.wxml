@@ -1,0 +1,5 @@
+<l-loadmore type="{{loadingType}}" l-end-class="loadmore-text" loading-text="{{loadingText}}" end-text="{{endText}}" show line>
+    <view slot="content" class="container">
+        <l-water-flow generic:l-water-flow-item="r-prod-preview" />
+    </view>
+</l-loadmore>

@@ -1,0 +1,60 @@
+<l-loadmore l-end-class="loadmore-text" type="end" end-text="创腾出品" show line>
+    <view slot="content" class="container">
+        <view class="img-container">
+            <view class="img-bg" style="background-image:url('{{detail.big_img}}')"></view>
+            <view class="img-wrap">
+                <image bind:load="onLoadImg" src="{{detail.big_img}}" class="top-img" mode="{{mode}}" />
+            </view>
+        </view>
+        <view class="info-container">
+            <view class="info-top">
+                <l-skeleton loading="{{loading}}" rows="2" title="{{false}}" rows-width="{{['400rpx','300rpx']}}" rows-height="{{['48rpx','32rpx']}}" l-class="left">
+                    <text class="title">{{detail.title}}</text>
+                    <view wx:if="{{tags[0] !== ''}}" class="tags">
+                        <block wx:for="{{tags}}" wx:key="index">
+                            <l-tag type="reading" bg-color="#dce3fa" size="super-mini" l-class="l-tag">
+                                <text class="tag">{{item}}</text>
+                            </l-tag>
+                        </block>
+                    </view>
+                </l-skeleton>
+                <view class="right">
+                    <l-button special open-type="share">
+                        <view class="inner">
+                            <l-icon name="share" size="24" color="#3a62bb" />
+                            <text>分</text>
+                            <text>享</text>
+                        </view>
+                    </l-button>
+                </view>
+            </view>
+            <l-skeleton loading="{{loading}}" title="{{false}}" rows="1" rows-width="500rpx" rows-height="36rpx" l-class="subtitle">
+                <view class="subtitle">{{detail.subtitle}}</view>
+            </l-skeleton>
+            <l-skeleton loading="{{loading}}" title="{{false}}" rows="1" rows-width="300rpx" rows-height="32rpx" class="info-bottom">
+                <view class="info-bottom">
+                    <text wx:if="{{detail.author}}" class="origin">作者：{{detail.author}}</text>
+                    <text wx:else class="origin">来源：{{detail.author}}</text>
+                    <view bind:tap="onLike" class="like">
+                        <image wx:if="{{liking}}" bind:load="onLikeGif" src="/images/likes/like.{{likeIcon}}" style="{{likeIcon==='gif'?'gif-size':''}}" class="like-icon" />
+                        <image wx:else src="/images/likes/unlike.png" class="like-icon" />
+                        <text class="like-num" style="color:{{liking?'#fa4c0d':''}}">{{likeNum}}</text>
+                    </view>
+                </view>
+            </l-skeleton>
+        </view>
+        <l-sticky bind:linsticky="onSticky" bind:linunsticky="onUnsticky">
+            <l-sticky-item l-header-class="sticky-container">
+                <l-transition show="{{show}}" name="{{showType}}" duration="{{ { enter: 200, leave: 1000 } }}" slot="header" class="step-title">
+                    <image src="/images/themes/b-2.png" class="step-state-img" mode="aspectFit" />
+                </l-transition>
+                <view slot="body" class="body-container">
+                    <block wx:for="{{detail.steps}}" wx:key="index">
+                        <r-step-card bind:preview="preview" data="{{item}}" loading="{{loading}}" class="step-card" />
+                    </block>
+                </view>
+            </l-sticky-item>
+        </l-sticky>
+        <view class="whitespace"></view>
+    </view>
+</l-loadmore>

@@ -1,0 +1,16 @@
+<wxs src="../../wxs/position.wxs" module="p"></wxs>
+<view class="container">
+    <l-skeleton loading="{{loading}}" avatar title="{{false}}" rows="2" avatar-size="160rpx" avatar-shape="square" l-class="skeleton" l-avatar-class="skeleton-avatar {{p.setResLocPosition(data.step)}}" l-row-class="skeleton-para {{p.setParaPosition(data.step)}}">
+        <l-card bind:tap="onTap" data-img="{{data.step_img}}" type="primary" position="{{p.setPosition(data.step)}}" image="{{data.step_img}}" image-mode="aspectFill" l-class="card" l-img-class="card-img">
+            <view class="step-desc {{p.setRightPosition(data.step)}}">
+                {{data.step_desc}}
+            </view>
+        </l-card>
+    </l-skeleton>
+    <view class="step-icon {{p.setLocPosition(data.step)}}">
+        <text class="step-index">{{data.step}}</text>
+        <l-icon l-class="reshape badge {{p.setLocPosition(data.step)}}" name="badge">
+            {{data.step}}
+        </l-icon>
+    </view>
+</view>

@@ -1,0 +1,45 @@
+<view class="header">
+    <l-search-bar bind:lincancel="onCancel" bind:linconfirm="onSearch" placeholder="输入关键字" maxlength="20" bg-color="#f1f1f1"></l-search-bar>
+</view>
+<view class="container">
+    <view wx:if="{{!search}}">
+        <view wx:if="{{historyTags.length !== 0}}" class="history-container">
+            <view class="history-title">
+                <view class="slide" />
+                <text>历史搜索</text>
+                <view style="flex:1;" />
+                <view bind:tap="onDeleteHistory" class="icon-container">
+                    <l-icon name="delete" l-class="icon" />
+                </view>
+            </view>
+            <view class="history-tags">
+                <block wx:for="{{historyTags}}" wx:key="index">
+                    <l-tag bind:lintap="onSearch" name="{{item}}" l-class="tag">{{item}}</l-tag>
+                </block>
+            </view>
+        </view>
+        <view class="history-container">
+            <view class="history-title">
+                <view class="slide" />
+                <text>热门搜索</text>
+                <view style="flex:1;" />
+            </view>
+            <view class="history-tags">
+                <block wx:for="{{hotTags}}" wx:key="index">
+                    <l-tag bind:lintap="onSearch" name="{{item.keyword}}" l-class="tag" l-select-class="tag-selected" select="{{item.highlight}}">
+                        <text class="keyword">{{item.keyword}}</text>
+                    </l-tag>
+                </block>
+            </view>
+        </view>
+    </view>
+    <view wx:else>
+        <l-loadmore show line end-text="创腾出品" type="end" l-end-class="loadmore-text">
+            <view slot="content" hidden="{{!search}}" class="spu-bottom">
+                <l-water-flow generic:l-water-flow-item="r-prod-preview" />
+                <image wx:if="{{toast}}" src="/images/themes/toast.png" class="toast-img" />
+            </view>
+        </l-loadmore>
+    </view>
+    <l-loading show="{{loading}}" type="flip" full-screen></l-loading>
+</view>

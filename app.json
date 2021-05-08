@@ -1,0 +1,81 @@
+{
+    "pages": [
+        "pages/home/home",
+        "pages/category/category",
+        "pages/share/share",
+        "pages/my/my",
+        "pages/search/search",
+        "pages/list/list",
+        "pages/work/work"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "塑新",
+        "navigationBarTextStyle": "black",
+        "onReachBottomDistance": 50
+    },
+    "tabBar": {
+        "borderStyle": "black",
+        "color": "#333",
+        "selectedColor": "#333",
+        "list": [
+            {
+                "text": "首页",
+                "pagePath": "pages/home/home",
+                "iconPath": "images/tabbars/home.png",
+                "selectedIconPath": "images/tabbars/home@lighthigh.png"
+            },
+            {
+                "text": "分类",
+                "pagePath": "pages/category/category",
+                "iconPath": "images/tabbars/category.png",
+                "selectedIconPath": "images/tabbars/category@lighthigh.png"
+            },
+            {
+                "text": "分享",
+                "pagePath": "pages/share/share",
+                "iconPath": "images/tabbars/share.png",
+                "selectedIconPath": "images/tabbars/share@lighthigh.png"
+            },
+            {
+                "text": "我的",
+                "pagePath": "pages/my/my",
+                "iconPath": "images/tabbars/my.png",
+                "selectedIconPath": "images/tabbars/my@lighthigh.png"
+            }
+        ]
+    },
+    "style": "v2",
+    "sitemapLocation": "sitemap.json",
+    "usingComponents": {
+        "l-grid": "/miniprogram_npm/lin-ui/grid/index",
+        "l-grid-item": "/miniprogram_npm/lin-ui/grid-item/index",
+        "l-tag": "/miniprogram_npm/lin-ui/tag/index",
+        "l-icon": "/miniprogram_npm/lin-ui/icon/index",
+        "l-badge": "/miniprogram_npm/lin-ui/badge/index",
+        "l-card": "/miniprogram_npm/lin-ui/card/index",
+        "l-popup": "/miniprogram_npm/lin-ui/popup/index",
+        "l-loadmore": "/miniprogram_npm/lin-ui/loadmore/index",
+        "l-water-flow": "/miniprogram_npm/lin-ui/water-flow/index",
+        "l-button": "/miniprogram_npm/lin-ui/button/index",
+        "l-transition": "/miniprogram_npm/lin-ui/transition/index",
+        "l-search-bar": "/miniprogram_npm/lin-ui/search-bar/index",
+        "l-segment": "/miniprogram_npm/lin-ui/segment/index",
+        "l-segment-item": "/miniprogram_npm/lin-ui/segment-item/index",
+        "l-loading": "/miniprogram_npm/lin-ui/loading/index",
+        "l-avatar":"/miniprogram_npm/lin-ui/avatar/index",
+        "l-sticky":"/miniprogram_npm/lin-ui/sticky/index",
+        "l-message":"/miniprogram_npm/lin-ui/message/index",
+        "l-dialog":"/miniprogram_npm/lin-ui/dialog/index",
+        "l-sticky-item":"/miniprogram_npm/lin-ui/sticky-item/index",
+        "l-skeleton": "/miniprogram_npm/lin-ui/skeleton/index",
+        "l-textarea": "/miniprogram_npm/lin-ui/textarea/index",
+        "l-form": "/miniprogram_npm/lin-ui/form/index",
+        "l-form-item": "/miniprogram_npm/lin-ui/form-item/index",
+        "l-input": "/miniprogram_npm/lin-ui/input/index",
+        "l-image-picker": "/miniprogram_npm/lin-ui/image-picker/index",
+        
+        "r-prod-preview": "/components/prod-preview/index"
+    }
+}

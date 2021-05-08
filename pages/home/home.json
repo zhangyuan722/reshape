@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "l-notice-bar": "/miniprogram_npm/lin-ui/notice-bar/index",
+    "r-slogan-panel": "/components/slogan-panel/index",
+    "r-category-grid": "/components/category-grid/index",
+    "r-scroll-list": "/components/scroll-list/index",
+    "r-rank-list": "/components/rank-list/index"
+  },
+  "enablePullDownRefresh": true
+}

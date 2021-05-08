@@ -1,0 +1,39 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 40rpx 28rpx 34rpx 28rpx;
+    margin-top: 10rpx;
+    background-color: #fff;
+}
+
+.title{
+    width: 690rpx;
+    height: 90rpx;
+}
+
+.inner-container{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 32rpx;
+}
+
+.left{
+    width: 346rpx;
+    height: 348rpx;
+    display: flex;
+}
+
+.right-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.right-size{
+    width: 346rpx;
+    height: 172rpx;
+    display: flex;
+}

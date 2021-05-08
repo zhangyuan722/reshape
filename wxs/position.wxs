@@ -1,0 +1,32 @@
+function setLocPosition(serial) {
+    return serial % 2 === 0 ? 'loc-left' : 'loc-right'
+}
+
+function setResLocPosition(serial) {
+    return serial % 2 === 0 ? 'loc-right' : 'loc-left'
+}
+
+function setParaPosition(serial) {
+    return serial % 2 === 0 ? 'para-left' : 'para-right'
+}
+
+function setDescPosition(serial) {
+    return serial % 2 === 0 ? 'loc-left' : 'loc-right'
+}
+
+function setPosition(serial) {
+    return serial % 2 === 0 ? 'right' : 'left'
+}
+
+function setRightPosition(serial) {
+    return serial % 2 === 0 ? '' : 'desc-right'
+}
+
+module.exports = {
+    setLocPosition: setLocPosition,
+    setResLocPosition: setResLocPosition,
+    setParaPosition: setParaPosition,
+    setDescPosition: setDescPosition,
+    setPosition: setPosition,
+    setRightPosition: setRightPosition
+}

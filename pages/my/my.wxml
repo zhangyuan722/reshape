@@ -1,0 +1,69 @@
+<wxs module="f" src="../../wxs/format.wxs" />
+<view class="container">
+    <view class="info-container">
+        <image src="/images/themes/my-bg.png" class="bg-img" mode="aspectFill" />
+        <view class="info">
+            <l-avatar open-data="{{ ['userAvatarUrl','userNickName'] }}" size="100" l-class="avatar" />
+            <view class="data-container">
+                <view class="data">
+                    <l-icon name="like" size="30" />
+                    <text>{{f.numFormat(like)}}</text>
+                </view>
+                <view class="line" />
+                <view bind:tap="onMyShare" class="data">
+                    <l-icon name="comment" size="30" />
+                    <text>{{f.numFormat(share)}}</text>
+                </view>
+                <view class="line" />
+                <view class="data">
+                    <l-icon name="favor" size="30" />
+                    <text>{{f.numFormat(publish)}}</text>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="list-container">
+        <view class="list-card">
+            <l-collapse type="accordion">
+                <l-collapse-item customTitle l-class="collapse" l-title-class="collapse-title" l-body-class="collapse-body">
+                    <view class="item-container" slot="title">
+                        <view class="item-title">
+                            <l-icon name="order" size="30" l-class="title-icon" />
+                            <text class="title-text">{{prodDesc.title}}</text>
+                        </view>
+                        <l-icon name="down" size="26" color="#8c98ae" />
+                    </view>
+                    <text class="desc-text" user-select>{{teamData.introduce}}</text>
+                    <view class="reshape-info">
+                        <view data-id="0" data-info="{{teamData.browse}}" bind:tap="toastInfo" class="info-data">
+                            <l-icon name="eye" />
+                            <text>{{teamData.browse}}</text>
+                        </view>
+                        <view data-id="1" data-info="{{teamData.sum_praise}}" bind:tap="toastInfo" class="info-data">
+                            <l-icon name="like" />
+                            <text>{{teamData.sum_praise}}</text>
+                        </view>
+                    </view>
+                </l-collapse-item>
+                <l-collapse-item customTitle l-class="collapse" l-title-class="collapse-title" l-body-class="collapse-body">
+                    <view class="item-container" slot="title">
+                        <view class="item-title">
+                            <l-icon name="warning" size="30" l-class="title-icon" />
+                            <text class="title-text">{{copyright.title}}</text>
+                        </view>
+                        <l-icon name="down" size="26" color="#8c98ae" />
+                    </view>
+                    <text class="desc-text" user-select>{{copyright.statement}}</text>
+                </l-collapse-item>
+            </l-collapse>
+        </view>
+        <view class="list-card">
+            <l-list title="清除缓存" bind:lintap="tapClear" icon="delete" icon-size="{{iconSize}}" gap="{{gap}}" l-content-class="title" l-class="list" />
+            <l-button l-class="feedback" open-type="feedback" shape="square" disabled-hover>
+                <l-list title="意见反馈" icon="customer-service" icon-size="{{iconSize}}" gap="{{gap}}" l-content-class="title" l-class="list-feedback" />
+            </l-button>
+            <l-list bind:tap="aboutUs" title="关于我们" icon="user" icon-size="{{iconSize}}" gap="{{gap}}" l-class="list" l-content-class="title" l-class="list" />
+        </view>
+    </view>
+</view>
+<l-dialog l-class="dialog" bind:linconfirm="onConfirm" bind:lincancel="onCancel" show="{{dialog}}" type="confirm" show-title="{{false}}" locked="{{false}}" content="仅保留您的点赞和分享信息？" confirm-text="好滴" cancel-text="不了" cancel-color="#999" />

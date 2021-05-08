@@ -1,0 +1,31 @@
+<l-loadmore l-end-class="loadmore-text" show type="{{loadingType}}" loading-text="{{loadingText}}" end-text="{{endText}}" line>
+    <view slot="content" class="container">
+        <l-notice-bar bind:tap="openSloganPanel" id="slogan" l-class="slogan" type="{{sloganStatus}}" speed="2000" front-icon-name="seed" end-icon-name="right" l-icon-class="reshape">
+            {{slogan}}
+        </l-notice-bar>
+        <image src="/images/themes/b-1.png" class="theme b-1" />
+        <swiper class="swiper" indicator-active-color="rgba(255, 255, 255, .8)" indicator-dots autoplay circular>
+            <block wx:for="{{banner}}" wx:key="index">
+                <swiper-item>
+                    <image data-id="{{item.id}}" bind:tap="onGotoDetail" wx:if="{{item.img}}" class="swiper-img" mode="aspectFill" src="{{item.img}}" />
+                </swiper-item>
+            </block>
+        </swiper>
+        <r-category-grid grid="{{grid}}" bgImg="{{illustration[0].id === 1?illustration[0].url:''}}" />
+        <image src="{{illustration[1].id === 2?illustration[1].url:''}}" class="theme i-1" />
+        <r-scroll-list prodList="{{newest}}" />
+        <image src="{{illustration[2].id === 3?illustration[2].url:''}}" class="theme i-2" />
+        <r-rank-list rankList="{{rank}}" />
+        <image src="{{illustration[3].id === 4?illustration[3].url:''}}" class="theme i-3" />
+        <view class="prod-bottom">
+            <view class="img-container">
+                <image src="/images/themes/t-3.png" />
+            </view>
+            <l-water-flow generic:l-water-flow-item="r-prod-preview" />
+        </view>
+    </view>
+</l-loadmore>
+<l-popup show="{{showing}}" l-class="reshape">
+    <r-slogan-panel bind:next="bindSlogan" value="{{slogan}}" windowWidth="{{windowWidth}}" windowHeight="{{windowHeight}}" />
+</l-popup>
+<l-loading show="{{loading}}" type="flash" full-screen></l-loading>

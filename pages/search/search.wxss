@@ -1,0 +1,95 @@
+page {
+    background-color: #fff;
+}
+
+.header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    padding-bottom: 14rpx;
+    border-bottom: 1px solid #f3f3f3;
+    z-index: 77;
+    background-color: #fff;
+}
+
+.container {
+    padding-top: 70rpx;
+}
+
+.history-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.history-title {
+    display: flex;
+    align-items: center;
+    margin-top: 38rpx;
+}
+
+.history-title>text {
+    font-size: 28rpx;
+    color: #333;
+}
+
+.slide {
+    width: 8rpx;
+    height: 46rpx;
+    margin-right: 22rpx;
+    background-color: #3a62bb;
+}
+
+.icon-container {
+    margin-right: 10rpx;
+    padding: 20rpx;
+}
+
+.icon {
+    font-size: 32rpx !important;
+    color: #999 !important;
+}
+
+.tag {
+    margin-right: 20rpx;
+    margin-bottom: 20rpx;
+    color: #666 !important;
+    background-color: #f3f3f3 !important;
+}
+
+.history-tags {
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin-top: 20rpx;
+    padding-left: 30rpx;
+}
+
+.tag-selected {
+    margin-right: 20rpx;
+    margin-bottom: 20rpx;
+    background-color: #dce3fa !important;
+}
+
+.keyword {
+    color: #3a62bb;
+}
+
+.spu-bottom {
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 18rpx 18rpx 0 18rpx;
+}
+
+.toast-img {
+    width: 100%;
+    height: 700rpx;
+}
+
+.loadmore-text {
+    margin: 0 20rpx !important;
+}

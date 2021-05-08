@@ -1,0 +1,7 @@
+function numFormat(num) {
+    return num > 9999 ? (Math.floor(num / 1000) / 10) + 'w' : num
+}
+
+module.exports = {
+    numFormat: numFormat
+}

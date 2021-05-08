@@ -1,0 +1,62 @@
+<image src="/images/themes/share-banner.png" mode="aspectFill" class="banner" />
+<scroll-view scroll-into-view="submit" scroll-y enable-flex class="container">
+    <l-form name="work" l-form-container-class="form" bind:linsubmit="submit">
+        <l-form-item label="作品名称:" name="title" tip-type="message" rules="{{rules}}">
+            <l-input id="title" placeholder="给自己的艺术品起个合适的名字吧" clear hide-label show-row="{{false}}" tip-type="message" rules="{{rules}}" required />
+        </l-form-item>
+        <l-form-item rules="{{categoryRule}}" tip-type="message" name="categories">
+            <picker data-root="{{root}}" data-sub="{{sub}}" bindchange="onCategoryConfirm" bindcolumnchange="onSelect" mode="multiSelector" range="{{categories}}">
+                <view id="categories" class="category">
+                    作品分类：
+                    <text class="category-text">{{root}} {{sub}}</text>
+                    <text hidden="{{categoryToast}}" class="category-text category-toast">
+                        戳我选择分类
+                    </text>
+                </view>
+            </picker>
+        </l-form-item>
+        <l-form-item label="作者名称:" name="author" tip-type="message" rules="{{rules}}">
+            <l-input id="author" placeholder="来个响亮的尊号" maxlength="20" clear hide-label show-row="{{false}}" tip-type="message" rules="{{rules}}" required />
+        </l-form-item>
+        <l-form-item label="联系方式:" name="contact" tip-type="message" rules="{{rules}}">
+            <l-input id="contact" placeholder="仅用于与您沟通作品信息问题" clear hide-label show-row="{{false}}" tip-type="message" rules="{{rules}}" required />
+        </l-form-item>
+        <l-form-item label="作品描述:" name="subtitle" tip-type="message" rules="{{rules}}">
+            <l-textarea id="subtitle" placeholder="简单介绍该作品或制作心得" l-error-text-class="error-text" l-inner-class="desc-container" auto-height hide-label show-row="{{false}}" maxlength="100" border="{{false}}" tip-type="message" rules="{{rules}}" required />
+        </l-form-item>
+        <view wx:if="{{!showStep}}" slot="submit" class="btn">
+            <l-button size="long">开始填写步骤</l-button>
+        </view>
+        <block wx:if="{{showStep}}" wx:for="{{steps}}" wx:key="index">
+            <view class="title">步骤 {{index + 1}}</view>
+            <view class="step">
+                <l-form-item name="img" tip-type="message" l-form-item-class="step-img-container">
+                    <l-image-picker data-index="{{index}}" bind:linchange="addImg" bind:linremove="removeImg" id="img{{index}}" count="1">
+                        <image src="/images/themes/add.png" class="img" />
+                    </l-image-picker>
+                </l-form-item>
+                <l-form-item name="desc{{index+1}}" tip-type="message" l-form-item-class="step-desc-container">
+                    <l-textarea id="desc{{index+1}}" hide-label show-row="{{false}}" maxlength="60" border="{{true}}" placeholder="填写文字描述" l-class="step-desc" />
+                </l-form-item>
+            </view>
+        </block>
+        <view wx:if="{{showStep}}" class="btn-container">
+            <l-button bind:lintap="deleteStep" type="default" icon="error" plain>删除步骤</l-button>
+            <l-button bind:lintap="addStep" type="default" icon="add" plain>添加步骤</l-button>
+        </view>
+        <view wx:if="{{showStep}}" slot="submit" class="submit" id="submit">
+            <l-button data-finished="{{true}}" bind:lintap="addStep" size="long">提交步骤信息</l-button>
+        </view>
+    </l-form>
+</scroll-view>
+
+<l-arc-popup min-height="500" show arc-radius="50">
+    <view class="notice-container">
+        <text class="notice-title">{{notice.title}}</text>
+        <block wx:for="{{notice.statement}}" wx:key="index">
+            <text class="notice-statement">{{item}}</text>
+        </block>
+    </view>
+</l-arc-popup>
+<l-message  />
+<l-dialog l-class="dialog" show="{{dialog}}" locked="{{false}}" content="感谢您为环保做出的贡献，确定并返回首页" title="提交成功"></l-dialog>

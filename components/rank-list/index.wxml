@@ -1,0 +1,12 @@
+<view class="container">
+    <image class="title" src="{{themeImg}}" />
+    <view class="inner-container">
+        <view hover-class="rect-hover" hover-stay-time="300">
+            <image data-id="{{left.id}}" bind:tap="onGotoDetail" class="left" mode="aspectFill" src="{{left.rank_img}}" />
+        </view>
+        <view class="right-container">
+            <image data-id="{{rightTop.id}}" bind:tap="onGotoDetail" class="right-size" mode="aspectFill" src="{{rightTop.rank_img}}" />
+            <image data-id="{{rightBottom.id}}" bind:tap="onGotoDetail" class="right-size" mode="aspectFill" src="{{rightBottom.rank_img}}" />
+        </view>
+    </view>
+</view>
