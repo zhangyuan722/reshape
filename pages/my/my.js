@@ -73,8 +73,17 @@ Page({
         this.getMyLikeList()
     },
 
+    onMyLike() {
+        if (this.data.like !== 0) {
+            this.showToast(`已有 ${this.data.like} 个青睐的作品😄`, 1000)
+        } else {
+            this.showToast(`还没有喜欢的作品😳`, 1000)
+        }
+        
+    },
+
     onMyShare() {
-        this.showToast('抱歉~ 暂未开放该功能', 1000)
+        this.showToast('抱歉~ 暂未开放该功能😌', 1000)
     },
 
     onConfirm() {

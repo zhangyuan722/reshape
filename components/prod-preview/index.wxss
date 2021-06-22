@@ -40,24 +40,28 @@
 }
 
 .subtitle {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
     font-size: 24rpx;
     font-weight: 400;
     margin-top: 6rpx;
     color: #888;
 }
 
-.like-container{
+.like-container {
     display: flex;
     justify-content: flex-end;
     align-items: center;
     margin-top: 6rpx;
 }
 
-.like-icon{
+.like-icon {
     width: 40rpx;
     height: 40rpx;
 }
 
-.like-num{
+.like-num {
     font-size: 20rpx;
 }

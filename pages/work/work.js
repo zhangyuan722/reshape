@@ -13,9 +13,6 @@ let likeNum = -1
 
 Page({
 
-    /**
-     * 页面的初始数据
-     */
     data: {
         loading: true,
         show: true,
@@ -30,9 +27,6 @@ Page({
         toast: false
     },
 
-    /**
-     * 生命周期函数--监听页面加载
-     */
     async onLoad(options) {
         
         id = options.id
@@ -43,6 +37,9 @@ Page({
     },
 
     async initDetailData(id) {
+        wx.request({
+            
+        })
         const detail = (await Work.getWorkDetailData(id)).data
         let tags = []
 
@@ -109,12 +106,11 @@ Page({
         const status = wx.getStorageSync(`like-${id}`)
 
         wx.setStorageSync(`like-${id}`, !status)
-        console.log(!status)
 
         await Like.bindLike(id, !status)
 
         likeNum = status ? likeNum - 1 : likeNum + 1
-        console.log(likeNum)
+
         if (!status) {
             wx.showToast({
                 title: LIKE_TOAST[Math.floor(Math.random() * LIKE_TOAST.length)],

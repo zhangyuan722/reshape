@@ -14,6 +14,7 @@ import { ProdPaging } from "../../models/prod-paging"
 
 let lock = false
 let flag = false
+let paging = 1
 
 Page({
 
@@ -34,7 +35,7 @@ Page({
         recommend: []
     },
 
-    async onLoad(options) {
+    async onLoad() {
         this.initAllData()
         this.getWindowSize()
     },
@@ -47,6 +48,7 @@ Page({
 
     async initAllData() {
         const homeData = (await HomeData.getHomeData()).data
+
         const data = homeData
         if (typeof data != 'object') {
             if (data != null) {
@@ -62,7 +64,7 @@ Page({
         const banner = data.banner.sort((a, b) => a.banner_id - b.banner_id)
         const grid = data.grid
         const illustration = data.illustration
-        const newest = data.newest
+        const newest = data.newest.sort((a, b) => a.id - b.id)
         const rank = data.rank
         const recommend = data.recommend
 
@@ -75,7 +77,14 @@ Page({
             newest,
             rank
         })
+        lock = false
+        paging = 1
+    },
 
+    onShowSlogan() {
+        const slogans = wx.getStorageSync('slogans')
+        const content = slogans[Math.floor(Math.random() * slogans.length)].value
+        wx.lin.showMessage({ content })
     },
 
     bindSlogan(e) {
@@ -107,13 +116,17 @@ Page({
         wx.reLaunch({
             url: '/pages/home/home'
         })
+        lock = false
+        paging = 1
     },
 
     async onReachBottom(e) {
         if (lock) {
             return
         }
-        const prodPaging = (await ProdPaging.getLatestPaging()).data
+        paging++
+        const prodPaging = (await ProdPaging.getLatestPaging(paging)).data
+
         console.log(prodPaging.recommend)
         wx.lin.renderWaterFlow(prodPaging.recommend, flag)
         if (prodPaging.end) {

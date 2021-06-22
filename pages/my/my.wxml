@@ -5,7 +5,7 @@
         <view class="info">
             <l-avatar open-data="{{ ['userAvatarUrl','userNickName'] }}" size="100" l-class="avatar" />
             <view class="data-container">
-                <view class="data">
+                <view bind:tap="onMyLike" class="data">
                     <l-icon name="like" size="30" />
                     <text>{{f.numFormat(like)}}</text>
                 </view>
@@ -15,7 +15,7 @@
                     <text>{{f.numFormat(share)}}</text>
                 </view>
                 <view class="line" />
-                <view class="data">
+                <view bind:tap="onMyShare" class="data">
                     <l-icon name="favor" size="30" />
                     <text>{{f.numFormat(publish)}}</text>
                 </view>

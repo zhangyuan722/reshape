@@ -2,7 +2,7 @@
 <scroll-view scroll-into-view="submit" scroll-y enable-flex class="container">
     <l-form name="work" l-form-container-class="form" bind:linsubmit="submit">
         <l-form-item label="作品名称:" name="title" tip-type="message" rules="{{rules}}">
-            <l-input id="title" placeholder="给自己的艺术品起个合适的名字吧" clear hide-label show-row="{{false}}" tip-type="message" rules="{{rules}}" required />
+            <l-input id="title" placeholder="取个合适的艺术名吧" clear hide-label show-row="{{false}}" tip-type="message" rules="{{rules}}" required />
         </l-form-item>
         <l-form-item rules="{{categoryRule}}" tip-type="message" name="categories">
             <picker data-root="{{root}}" data-sub="{{sub}}" bindchange="onCategoryConfirm" bindcolumnchange="onSelect" mode="multiSelector" range="{{categories}}">

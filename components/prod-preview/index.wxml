@@ -10,7 +10,7 @@
                 </l-tag>
             </block>
         </view>
-        <text class="subtitle">{{data.subtitle}}</text>
+        <view class="subtitle">{{data.subtitle}}</view>
         <view class="like-container">
             <image src="/images/likes/unlike.png" class="like-icon" />
             <text class="like-num">{{f.numFormat(data.praise)}}</text>

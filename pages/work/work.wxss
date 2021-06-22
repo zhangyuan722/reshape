@@ -114,8 +114,8 @@
 }
 
 .subtitle {
-    margin-top: 24rpx;
-    margin-bottom: 20rpx;
+    margin-top: 24rpx !important;
+    margin-bottom: 20rpx !important;
     color: #333;
     font-size: 28rpx;
     font-weight: 400;

@@ -33,8 +33,7 @@
             </l-skeleton>
             <l-skeleton loading="{{loading}}" title="{{false}}" rows="1" rows-width="300rpx" rows-height="32rpx" class="info-bottom">
                 <view class="info-bottom">
-                    <text wx:if="{{detail.author}}" class="origin">作者：{{detail.author}}</text>
-                    <text wx:else class="origin">来源：{{detail.author}}</text>
+                    <text class="origin">来源于：{{detail.author}}</text>
                     <view bind:tap="onLike" class="like">
                         <image wx:if="{{liking}}" bind:load="onLikeGif" src="/images/likes/like.{{likeIcon}}" style="{{likeIcon==='gif'?'gif-size':''}}" class="like-icon" />
                         <image wx:else src="/images/likes/unlike.png" class="like-icon" />

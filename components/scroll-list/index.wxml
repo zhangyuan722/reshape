@@ -3,7 +3,7 @@
     <scroll-view scroll-x class="scroll-view">
         <view class="inner">
             <block wx:for="{{prodList}}" wx:key="index">
-                <view data-id="{{item.id}}" bind:tap="onGotoDetail" class="newest-container">
+                <view data-id="{{item.product_id}}" bind:tap="onGotoDetail" class="newest-container">
                     <image class="newest-img" src="{{item.newest_img}}" />
                     <text class="newest-text">{{item.title}}</text>
                 </view>

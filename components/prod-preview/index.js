@@ -1,11 +1,24 @@
-// components/prod-preview/index.js
+import { HomeData } from "../../models/home"
+
 Component({
-    /**
-     * 组件的属性列表
-     */
+
     properties: {
         data: Object,
         slipping: Boolean
+    },
+
+    pageLifetimes: {
+        async show() {
+            const data = (await HomeData.getHomeData()).data.recommend.filter(i => i.id === this.properties.data.id)
+        
+            if (this.properties.data.praise && data[0].praise) {
+                this.properties.data.praise = data[0].praise
+            }   
+
+            this.setData({
+                data: this.properties.data
+            })
+        }
     },
 
     observers: {
@@ -15,7 +28,7 @@ Component({
             }
 
             const tags = (data.tags || '').split('#')
-            if (tags[tags.length-1] === '') {
+            if (tags[tags.length - 1] === '') {
                 return
             }
 
@@ -45,7 +58,7 @@ Component({
         onGotoDetail(e) {
             const id = e.currentTarget.dataset.pid
             wx.navigateTo({
-                url:`/pages/work/work?id=${id}`
+                url: `/pages/work/work?id=${id}`
             })
         },
 

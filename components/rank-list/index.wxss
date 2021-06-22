@@ -18,22 +18,25 @@
     display: flex;
     justify-content: space-between;
     margin-top: 32rpx;
+    overflow: hidden;
 }
 
 .left{
-    width: 346rpx;
-    height: 348rpx;
+    width: 347rpx;
+    height: 522rpx;
     display: flex;
+    overflow: hidden;
 }
 
 .right-container{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    overflow: hidden;
 }
 
 .right-size{
     width: 346rpx;
-    height: 172rpx;
+    height: 260rpx;
     display: flex;
 }
